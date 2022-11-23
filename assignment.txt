@@ -1,0 +1,56 @@
+1)CREATE TABLE Student (  
+student_id   int(5)
+student_Name  varchar(20)
+created_at  datetime
+created_by  varchar(250)
+updated_at  datetime
+updated_by  varchar(250)
+); 
+CREATE TABLE StudentDetails  (  
+
+id  int(5)
+student_id  int ( 5 )
+OtherDetails  varchar(20)
+created_at datetime
+created_by varchar(250)
+updated_at datetime
+updated_by varchar(250)
+); 
+INSERT INTO Student (
+    student_id ,student_Name,created_at ,created_by,updated_at,updated_by)
+)
+VALUES (1, 'SHAREEF', '20-jan-2001','Joy' ,'25-oct-2001', 'Joy');
+
+INSERT INTO Student (
+    student_id ,student_Name,created_at ,created_by,updated_at,updated_by)
+)
+VALUES (2, 'SHAN', '21-jan-2001','JC' ,'20-oct-2001', 'JC');
+
+INSERT INTO StudentDetails (
+    id,student_id ,OtherDetails,created_at ,created_by,updated_at,updated_by)
+)
+VALUES (1,1, 'M', '20-jan-2001','Joy' ,'25-oct-2001', 'Joy');
+INSERT INTO StudentDetails (
+    id,student_id ,OtherDetails,created_at ,created_by,updated_at,updated_by)
+)
+VALUES (2,2, 'M', '21-jan-2001','JC' ,'20-oct-2001', 'JC');
+
+
+2)
+i)SELECT t1.student_id, t1.student_Name, t1.created_at,t1.created_by,t1.updated_at ,t1.updated_by, t2.id,t2.student_id,t2.OtherDetails,t2.created_at,t2.created_by,t2.updated_at,t2.updated_by
+FROM Student t1
+INNER JOIN StudentDetails t2 ON t2.student_id = t1.student_id;
+ii)SELECT E.*, D.* 
+FROM Student as E 
+LEFT JOIN `StudentDetails` as D ON D.student_id = E.student_id;
+
+3)ALTER TABLE Student ADD (student_id(5) ,student_Name(varchar(20)),created_at (datetime) ,created_by(varchar(20)),updated_at(datetime),updated_by(varchar(20))
+ALTER TABLE StudentDetails ADD (id(5),student_id(5) ,OtherDetails(varchar(20)),created_at (datetime) ,created_by(varchar(20)),updated_at(datetime),updated_by(varchar(20));
+4)UPDATE Student
+SET student_id='12',student_Name='jac',created_at='26-jan-2002',,created_by='sanu',updated_at='22-jan-2002',updated_by='JCC'
+WHERE student_id='1';
+5)DELETE FROM Student WHERE id = '12';
+
+
+
+
